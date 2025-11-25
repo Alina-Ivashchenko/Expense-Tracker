@@ -7,26 +7,23 @@ import ExpensesChart from "./ExpensesChart";
 
 function DisplayExpenses(props) {
 
-  const [filterYear, setFilteredYear] = useState('2020');
+  const currentYear = new Date().getFullYear().toString();
+  const [filterYear, setFilteredYear] = useState(currentYear);
 
-  const filterChangeHandler = year => {
-    setFilteredYear(year);  
-    // console.log("Year");
-    // console.log(year);
-  }
+  const filterChangeHandler = year => setFilteredYear(year);
 
-  const filteredExpenses = props.expenses_list.filter(expense => expense.date.getFullYear().toString() == filterYear);
+  const filteredExpenses = (props.expenses || []).filter(expense => expense.date.getFullYear().toString() === filterYear);
 
   return (
     <div>
 
       <Card className="expenses">
 
-        <ExpensesFilter selected={filterYear} onFilterChange={filterChangeHandler}/>
+        <ExpensesFilter selected={filterYear} onFilterChange={filterChangeHandler} years={[...new Set((props.expenses || []).map(e => e.date.getFullYear().toString()))].sort((a,b) => b-a)} />
 
         <ExpensesChart expenses={filteredExpenses} />
 
-        {filteredExpenses.length === 0 && (<p>Mo expenses found.</p>)}
+        {filteredExpenses.length === 0 && (<p>No expenses found.</p>)}
         
         {
           filteredExpenses.length > 0 && 

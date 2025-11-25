@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 
 // gonna learn about states now!
 
-function ExpenseItem(props) {
+function ExpenseItem({title, amount, date}) {
 
   // const [title, setTitle] = useState(props.title);
 
@@ -17,11 +17,11 @@ function ExpenseItem(props) {
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
+        <div className="expense-item__description">
+        <h2>{title}</h2>
+        <div className="expense-item__price">{amount.toLocaleString(undefined, { style: 'currency', currency: 'USD' })}</div>
       </div>
-      <br></br>
+      
     </Card>
   );
 }

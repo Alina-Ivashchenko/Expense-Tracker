@@ -35,14 +35,14 @@ const App = () => {
 
   const addExpenseHandler = expense => {
     setExpenses(prevExpenses => {
-      return [expense, ...expenses]
+      return [expense, ...prevExpenses];
     });
   }
 
   return (
   <div>
      <NewExpense onAddExpense = {addExpenseHandler} />
-     <DisplayExpenses expenses_list={expenses} />
+    <DisplayExpenses expenses={expenses} />
   
   </div>
  );

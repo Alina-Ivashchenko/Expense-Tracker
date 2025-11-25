@@ -7,7 +7,7 @@ const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData ={
       ...enteredExpenseData,
-      id: Math.random().toString()
+      id: Date.now().toString()
     }
 
     props.onAddExpense(expenseData);
@@ -15,16 +15,16 @@ const NewExpense = (props) => {
 
   const [vis, setVis] = useState(false);
 
-  const AddNewExpenseButtonHandler = () => {
+  const addNewExpenseButtonHandler = () => {
     setVis(true);
   };
 
   return (
     <div className="new-expense">
 
-        {!vis && (<button onClick={AddNewExpenseButtonHandler}>Add New Expense</button>)}
+        {!vis && (<button onClick={addNewExpenseButtonHandler}>Add New Expense</button>)}
         
-        {vis && <ExpenseForm visibility={setVis} onSaveExpenseData={saveExpenseDataHandler} />}
+        {vis && <ExpenseForm onCancel={() => setVis(false)} onSaveExpenseData={saveExpenseDataHandler} />}
         
     </div>
   );
