@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
@@ -16,7 +16,7 @@ function ExpenseItem({title, amount, date}) {
 
   return (
     <Card className="expense-item">
-      <ExpenseDate date={props.date} />
+      <ExpenseDate date={date} />
         <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">{amount.toLocaleString(undefined, { style: 'currency', currency: 'USD' })}</div>

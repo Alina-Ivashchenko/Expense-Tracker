@@ -22,10 +22,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+.App-header {
+  background: linear-gradient(180deg, rgba(10,64,12,0.95) 0%, rgba(129,144,103,0.9) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--bg);
+  padding: 3rem 0;
 }
 
 .App-link {
   color: #61dafb;
+.App-link {
+  color: var(--muted);
 }
 
 @keyframes App-logo-spin {

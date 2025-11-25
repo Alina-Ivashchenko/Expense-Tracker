@@ -2,9 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   margin: 1rem 0;
-  background-color: #4b4b4b;
+  background-color: rgba(250,250,250,0.03);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(10, 64, 12, 0.06);
 }
 
 .expense-item__description {
@@ -18,21 +20,20 @@
 }
 
 .expense-item h2 {
-  color: #3a3a3a;
+  color: var(--bg);
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
-  color: white;
 }
 
 .expense-item__price {
   font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  background-color: #40005d;
-  border: 1px solid white;
-  padding: 0.5rem;
-  border-radius: 12px;
+  font-weight: 700;
+  color: var(--bg);
+  background-color: var(--primary);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
 }
 
 @media (min-width: 580px) {
@@ -49,6 +50,6 @@
 
   .expense-item__price {
     font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 }
