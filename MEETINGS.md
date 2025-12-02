@@ -136,3 +136,98 @@
 
 **Next Meeting:** Tuesday, November 18, 2025 – 3:00 PM  
 **Focus:** Backend integration, review progress, and continue planning Milestone 3 features.
+
+
+# 📝 Meeting Notes – November 18, 2025
+
+**Attendees:**  
+- Alina  
+- Connor  
+- Thomas  
+- Brandon  
+
+---
+
+## 📅 Meeting Overview
+**Date:** November 18, 2025  
+**Time:** 3:00–3:30 PM  
+**Purpose:** Review backend progress, confirm database setup, and coordinate login system development.
+
+---
+
+## 🧩 Key Decisions
+- Confirmed database setup is complete and ready for integration.  
+- Agreed login/register system is the main development focus this week.  
+- Continued priority on frontend improvements and UI consistency.
+
+---
+
+## 📋 Progress & Updates
+- **Thomas** finished setting up the database and pushed it to **GitHub**, including setup instructions using **MySQL Workbench**.  
+- **Brandon and Thomas** are working together on the **login/register system**.  
+- **Connor and Alina** continued working on **frontend design and layout**, improving UI and usability.
+
+---
+
+## ✅ Action Items
+
+| Task                                   | Assigned To        | Due Date     |
+|----------------------------------------|--------------------|--------------|
+| Finalize login/register functionality  | Brandon & Thomas   | November 25  |
+| Continue frontend/UI improvements      | Connor & Alina     | November 25  |
+| Verify database documentation          | Thomas             | Ongoing      |
+| Maintain meeting notes                 | Alina              | Ongoing      |
+
+---
+
+**Next Meeting:** Tuesday, November 25, 2025 – 3:00 PM  
+**Focus:** Database connection, login progress review, and frontend refinements.
+
+
+
+# 📝 Meeting Notes – November 25, 2025
+
+**Attendees:**  
+- Alina  
+- Connor  
+- Thomas  
+- *(Brandon – Absent)*  
+
+---
+
+## 📅 Meeting Overview
+**Date:** November 25, 2025  
+**Time:** 3:00–3:25 PM  
+**Purpose:** Review authentication progress, begin database connection, and refine frontend design.
+
+---
+
+## 🧩 Key Decisions
+- Confirmed database connection will begin this week.  
+- Assigned Connor to follow up with Brandon for progress updates.  
+- Continued UI cleanup and layout improvements.
+
+---
+
+## 📋 Progress & Updates
+- **Thomas** will connect the database and begin reviewing the **login system**.  
+- **Brandon** did not attend the meeting; follow-up assigned to Connor.  
+- **Connor** reviewed the frontend and communicated improvements with Alina.  
+- **Alina** updated **UI design**, changed **color palette**, refined layout and styling, and maintained documentation.
+
+---
+
+## ✅ Action Items
+
+| Task                           | Assigned To | Due Date     |
+|--------------------------------|-------------|--------------|
+| Connect database to project    | Thomas      | December 2   |
+| Review login system            | Thomas      | December 2   |
+| Follow up with Brandon         | Connor      | November 26  |
+| Continue frontend development  | Alina       | Ongoing      |
+| Upload updated `MEETINGS.md`   | Alina       | Ongoing      |
+
+---
+
+**Next Meeting:** Tuesday, December 2, 2025 – 3:00 PM  
+**Focus:** Database integration, authentication testing, and UI polish.
