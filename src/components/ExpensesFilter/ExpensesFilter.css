@@ -6,22 +6,28 @@
 .expenses-filter__control {
   display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1rem 0;
+  flex-direction: column; /* stack label and select */
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .expenses-filter label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 .expenses-filter select {
   font: inherit;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   font-weight: 600;
   border-radius: 8px;
   border: 1px solid rgba(10,64,12,0.08);
   background-color: rgba(255,255,255,0.02);
   color: var(--bg);
+  width: 10rem; /* reasonable width to avoid covering the label */
+}
+
+@media (max-width: 780px) {
+  .expenses-filter select { width: 100%; }
 }
