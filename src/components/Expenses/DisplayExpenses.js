@@ -19,9 +19,10 @@ function DisplayExpenses(props) {
 
       <Card className="expenses">
 
-        <ExpensesFilter selected={filterYear} onFilterChange={filterChangeHandler} years={[...new Set((props.expenses || []).map(e => e.date.getFullYear().toString()))].sort((a,b) => b-a)} />
-
-        <ExpensesChart expenses={filteredExpenses} />
+        <div className="expenses-top">
+          <ExpensesFilter selected={filterYear} onFilterChange={filterChangeHandler} years={[...new Set((props.expenses || []).map(e => e.date.getFullYear().toString()))].sort((a,b) => b-a)} />
+          <ExpensesChart className="expenses-chart" expenses={filteredExpenses} />
+        </div>
 
         {filteredExpenses.length === 0 && (<p>No expenses found.</p>)}
         

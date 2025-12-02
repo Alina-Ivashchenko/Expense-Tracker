@@ -9,7 +9,7 @@ function Chart (props) {
 
 
     return (
-        <div className='chart'>
+        <div className={`chart ${props.className || ''}`}>
 
             {props.dataPoints.map(dataPoint => 
             <ChartBar 

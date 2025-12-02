@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./App.css";
 import DisplayExpenses from "./components/Expenses/DisplayExpenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -40,10 +41,23 @@ const App = () => {
   }
 
   return (
-  <div>
-     <NewExpense onAddExpense = {addExpenseHandler} />
-    <DisplayExpenses expenses={expenses} />
-  
+  <div className="App">
+    <header className="App-header">
+      <div className="App-header-inner">
+        <div className="App-title">Expense Tracker</div>
+      </div>
+    </header>
+
+    <main className="App-main">
+      <aside className="App-sidebar">
+        <NewExpense onAddExpense={addExpenseHandler} />
+      </aside>
+
+      <section className="App-content">
+        <DisplayExpenses expenses={expenses} />
+      </section>
+    </main>
+
   </div>
  );
 };

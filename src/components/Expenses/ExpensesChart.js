@@ -23,7 +23,7 @@ function ExpensesChart(props) {
         chartDataPoints[expenseMonth].value += expense.amount;
     }
 
-    return <Chart dataPoints={chartDataPoints} />;
+    return <Chart className={props.className} dataPoints={chartDataPoints} />;
 }
 
 export default ExpensesChart;
