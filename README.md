@@ -1,22 +1,29 @@
 # Expense Tracker
 
-![Screenshot 2023-05-17 at 7 14 42 PM](https://github.com/ReeveFernandes/Expense-Tracker/assets/92554845/552e0672-02b5-4464-87ba-7ec7755757b9)
-
-
-Welcome to Expense Tracker, a web application built with React.js that helps you keep track of your expenses. This expense tracker provides a simple and intuitive interface for managing your financial transactions and monitoring your spending habits.
-
-## Features
-
-- **Expense Categories:** Categorize your expenses for better organization and analysis.
-- **Add and Delete Expenses:** Easily add new expenses.
-- **Transaction History:** View a list of all your transactions along with the date.
-- **Filter and Search:** Filter expenses by category and search for specific transactions.
-- **Expense Summary:** Get a quick overview of your total income and expenses.
-- **Responsive Design:** Enjoy a seamless experience across different devices and screen sizes.
+Welcome to Expense Tracker, a modern single‑page React application for keeping a lightweight ledger of day‑to‑day expenses. It focuses on quick entry, flexible filtering, and keeping data portable so you can back up or migrate your records easily.
 
 ## Live Demo
 
-You can access the live demo of the Expense Tracker by clicking [here](https://my-expense-tracker.onrender.com/).
+- Vercel deployment: https://expense-tracker-se3200.vercel.app/
+
+## Highlights
+
+![Application screenshot](public/screenshot.png)
+
+- **Local persistence:** All expenses are stored in the browser via `localStorage`, so entries survive refreshes or closing the tab.
+- **Add & delete entries:** Capture a title, amount, and date with inline validation, then remove any record with a single click.
+- **Dynamic filters & charts:** View expenses grouped by year, filter the list, and visualize monthly spend with the included bar chart.
+- **CSV import/export:** Download your ledger as CSV for backup or import an existing file (comma or tab delimited) via drag-and-drop.
+- **Responsive glass UI:** Redesigned dark theme with glassmorphism treatment across cards, forms, and the sidebar import controls.
+
+## Architecture & Design Choices
+
+- **Client-only architecture:** The app is a pure React SPA deployed to static hosting (e.g., Vercel). All persistence uses browser APIs, removing backend dependencies.
+- **State management:** Expense state lives at the `App` level, feeding down to `DisplayExpenses`, `NewExpense`, and `DataControls` while being synced to `localStorage` via `useEffect`.
+- **Component grouping:** Feature folders (`components/Expenses`, `components/NewExpense`, etc.) mirror UI modules, making it easy to locate related styles and logic.
+- **CSV module:** `DataControls` encapsulates parsing/export logic, so future persistence mechanisms (REST, IndexedDB) can reuse a single entry point.
+- **Design system:** Theme tokens live in `src/index.css` (`--bg`, `--primary`, etc.). Cards share the same glassmorphism styling (`components/UI/Card.css`) with variations layered via component-specific CSS.
+
 
 ## Getting Started
 
@@ -50,10 +57,12 @@ npm start
 
 ## Technologies Used
 
-- React: [^17.0.2](https://reactjs.org/)
+- React 18 with Create React App
+- Browser APIs (`localStorage`, `FileReader`, `Blob`) for persistence and CSV handling
+- CSS Modules / plain CSS for component-scoped styling
 
 ## Acknowledgements
 
-- The Expense Tracker project is based on the React - The Complete Guide (incl Hooks, React Router, Redux) course by Academind by Maximilian Schwarzmüller on Udemy.
+- Based on the original [Expense Tracker](https://github.com/ReeveFernandes/Expense-Tracker) by Reeve Fernandes and adapted for this coursework.
 
 Enjoy tracking your expenses with Expense Tracker!
