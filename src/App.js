@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 import DisplayExpenses from "./components/Expenses/DisplayExpenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -32,13 +32,46 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
 
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const loadInitialExpenses = () => {
+    if (typeof window === "undefined") {
+      return DUMMY_EXPENSES;
+    }
+
+    try {
+      const storedExpenses = window.localStorage.getItem("expenses");
+      if (!storedExpenses) {
+        return DUMMY_EXPENSES;
+      }
+      const parsedExpenses = JSON.parse(storedExpenses);
+      return parsedExpenses.map((expense) => ({
+        ...expense,
+        date: new Date(expense.date),
+      }));
+    } catch (error) {
+      console.error("Failed to parse expenses from storage:", error);
+      return DUMMY_EXPENSES;
+    }
+  };
+
+  const [expenses, setExpenses] = useState(loadInitialExpenses);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("expenses", JSON.stringify(expenses));
+    }
+  }, [expenses]);
 
   const addExpenseHandler = expense => {
     setExpenses(prevExpenses => {
       return [expense, ...prevExpenses];
     });
   }
+
+  const deleteExpenseHandler = (expenseId) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.filter((expense) => expense.id !== expenseId)
+    );
+  };
 
   return (
   <div className="App">
@@ -54,7 +87,7 @@ const App = () => {
       </aside>
 
       <section className="App-content">
-        <DisplayExpenses expenses={expenses} />
+        <DisplayExpenses expenses={expenses} onDeleteExpense={deleteExpenseHandler} />
       </section>
     </main>
 

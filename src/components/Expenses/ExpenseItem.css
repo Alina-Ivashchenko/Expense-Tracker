@@ -36,6 +36,27 @@
   border-radius: 10px;
 }
 
+.expense-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.expense-item__actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  background-color: rgba(255, 69, 58, 0.2);
+  color: rgba(255, 69, 58, 1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.expense-item__actions button:hover {
+  background-color: rgba(255, 69, 58, 0.35);
+}
+
 @media (min-width: 580px) {
   .expense-item__description {
     flex-direction: row;
