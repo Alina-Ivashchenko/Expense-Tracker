@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Theme variables */
+:root {
+  --bg: #030712;
+  --surface: #0b1120;
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+  --accent: #f472b6;
+  --danger: #f87171;
+  --border: rgba(148, 163, 184, 0.25);
+  --radius: 16px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,31 +26,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Theme variables */
-:root {
-  --bg: #FEFAE0; /* light cream */
-  --text: #0A400C; /* dark green */
-  --primary: #0A400C; /* dark primary */
-  --secondary: #819067; /* mid green */
-  --muted: #B1AB86; /* light muted */
-  --card-bg: #819067; /* card background */
-  --surface: rgba(10, 64, 12, 0.06);
-  --radius: 12px;
-}
-
-body {
-  background-color: var(--bg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.25), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.25), transparent 30%),
+    linear-gradient(135deg, #020617, #0b1221 45%, #111827);
   color: var(--text);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-/* Typography */
-html, body, #root {
-  height: 100%;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 /* Use border-box globally to avoid layout overflow caused by padding/border */
@@ -38,15 +40,17 @@ html, body, #root {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--text);
 }
 
-small, p, span, label {
-  color: var(--text);
+p, span, label, small {
+  color: var(--muted);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
