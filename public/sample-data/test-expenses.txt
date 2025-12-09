@@ -1,0 +1,5 @@
+title,amount,date
+Groceries,82.15,2023-11-05T14:30:00.000Z
+Rent,1200,2023-11-01T00:30:00.000Z
+Gym Membership,50,2023-11-01T00:30:00.000Z
+Concert Tickets,180.59,2023-11-18T19:30:00.000Z

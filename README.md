@@ -16,6 +16,10 @@ Welcome to Expense Tracker, a modern single‑page React application for keeping
 - **CSV import/export:** Download your ledger as CSV for backup or import an existing file (comma or tab delimited) via drag-and-drop.
 - **Responsive glass UI:** Redesigned dark theme with glassmorphism treatment across cards, forms, and the sidebar import controls.
 
+## Sample Data
+
+- Download [`test-expenses.txt`](./public/sample-data/test-expenses.txt) and use it with the Import File dropzone to quickly demo the CSV feature (comma-separated with ISO timestamps).
+
 ## Architecture & Design Choices
 
 - **Client-only architecture:** The app is a pure React SPA deployed to static hosting (e.g., Vercel). All persistence uses browser APIs, removing backend dependencies.
