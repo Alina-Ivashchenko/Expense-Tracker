@@ -4,7 +4,7 @@
 
 **Sprint Number:** Sprint 1  
 **Dates:** October 28 – November 18, 2025  
-**Team Members:** Alina Ivashchenko, Connor, Thomas, Brandon  
+**Team Members:** Alina, Connor, Thomas, Brandon  
 
 ### Sprint Goal
 Establish project structure, assign roles, plan backend architecture, and begin initial development
