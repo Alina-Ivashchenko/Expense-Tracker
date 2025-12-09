@@ -39,7 +39,7 @@ workload using Jira.
 
 ## Team Contributions
 
-### Alina Ivashchenko
+### Alina
 - Maintained Jira board
 - Uploaded meeting documentation
 - Organized meetings
