@@ -1,0 +1,93 @@
+.data-controls {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: var(--bg);
+}
+
+.data-controls h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.data-controls__helper-text {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.data-controls__buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.data-controls__buttons > * {
+  flex: 1;
+}
+
+.data-controls__dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed var(--primary);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--bg);
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.data-controls__dropzone strong {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.35rem;
+}
+
+.data-controls__dropzone span {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.data-controls__dropzone--active {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.data-controls__buttons button {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--bg);
+  background-color: var(--primary);
+  transition: opacity 0.2s ease;
+}
+
+.data-controls__buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.data-controls__buttons button:not(:disabled):hover {
+  opacity: 0.8;
+}
+
+.data-controls__file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}

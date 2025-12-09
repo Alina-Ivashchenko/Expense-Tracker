@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./App.css";
 import DisplayExpenses from "./components/Expenses/DisplayExpenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import DataControls from "./components/DataControls/DataControls";
 
 const DUMMY_EXPENSES = [
     {
@@ -67,6 +68,34 @@ const App = () => {
     });
   }
 
+  const importExpensesHandler = (importedExpenses = []) => {
+    if (!Array.isArray(importedExpenses) || importedExpenses.length === 0) {
+      return;
+    }
+
+    setExpenses(prevExpenses => {
+      const existingIds = new Set(prevExpenses.map(expense => expense.id));
+
+      const sanitizedExpenses = importedExpenses.map(expense => {
+        let incomingId = expense.id;
+        while (!incomingId || existingIds.has(incomingId)) {
+          incomingId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+        }
+        existingIds.add(incomingId);
+
+        const normalizedExpense = {
+          ...expense,
+          id: incomingId,
+          amount: Number(expense.amount),
+          date: expense.date instanceof Date ? expense.date : new Date(expense.date)
+        };
+        return normalizedExpense;
+      }).filter(expense => expense.title && !Number.isNaN(expense.amount) && expense.date instanceof Date && !Number.isNaN(expense.date.getTime()));
+
+      return [...sanitizedExpenses, ...prevExpenses];
+    });
+  };
+
   const deleteExpenseHandler = (expenseId) => {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== expenseId)
@@ -84,6 +113,7 @@ const App = () => {
     <main className="App-main">
       <aside className="App-sidebar">
         <NewExpense onAddExpense={addExpenseHandler} />
+        <DataControls expenses={expenses} onImportExpenses={importExpensesHandler} />
       </aside>
 
       <section className="App-content">

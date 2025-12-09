@@ -48,7 +48,7 @@
   padding: 0.4rem 0.8rem;
   font-weight: 600;
   background-color: rgba(255, 69, 58, 0.2);
-  color: rgba(255, 69, 58, 1);
+  color: rgb(193, 10, 0);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
